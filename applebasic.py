@@ -213,7 +213,7 @@ def parse_prog(data: bytes, show_offsets: bool, original: bool) -> str:
     unk1 = from_uint16_le(data[ptr : ptr + 2])
     linenum = from_uint16_le(data[ptr + 2 : ptr + 4])
     ptr += 4
-    result += "{linenum} " if original else f"# {linenum}\n"
+    result += f"{linenum} " if original else f"# {linenum}\n"
     while ptr < len(data):
 
         offset = ptr
